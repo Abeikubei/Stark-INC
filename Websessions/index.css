@@ -1,0 +1,9 @@
+p {
+	background-color: red;
+	font-family: blackletter;
+	color: white;
+
+}
+table, th, td {
+  border: 1px solid black;
+}
