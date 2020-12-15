@@ -1,5 +1,5 @@
 <?php
-require(dirname(__FILE__))."../classescontrollers/Districts_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/Districts_controller.php";
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +24,7 @@ require(dirname(__FILE__))."../classescontrollers/Districts_controller.php";
                   <input class="form-control mr-sm-2" type="text" placeholder="Search" name="Search" id="Search">
                   <button class="btn btn-success" type="submit">Search</button>
                 </form>
+                <a style="color:white" href="../Forms/Dashboard.php">Return to The Dashboard</a>
               </nav>
           <!-- Tables to display the elements of the Admins database -->
           <div class="container">

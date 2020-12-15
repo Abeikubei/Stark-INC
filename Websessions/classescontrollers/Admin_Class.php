@@ -1,6 +1,6 @@
 <?php
 //connecting to DB
-require(dirname(__FILE__))."../Settings/db_class.php";
+require(dirname(__FILE__))."/../Settings/db_class.php";
 
 /**
 *Admin class for everything admin related

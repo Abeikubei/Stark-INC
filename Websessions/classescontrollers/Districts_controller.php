@@ -1,6 +1,6 @@
 <?php
 //connect to contact class
-require(dirname(__FILE__))."Districts_class.php";
+require("Districts_class.php");
 
 //insert district function. 
 function insert_districtfunc($a, $b, $c,$d){

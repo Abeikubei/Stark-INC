@@ -1,6 +1,6 @@
 <?php
 //connect to CCT class
-require(dirname(__FILE__))."CCT_class.php";
+require("CCT_class.php");
 
 //insert manager function. 
 function insert_CCTfunc($a, $b, $c){
@@ -10,7 +10,7 @@ function insert_CCTfunc($a, $b, $c){
 	if ($insert_CCT) {
 		return $insert_CCT;
 	}
-	return false;
+	return $new_CCT_object->db->error;
 }
 
 function select_district(){

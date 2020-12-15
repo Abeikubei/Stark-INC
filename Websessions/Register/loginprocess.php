@@ -1,5 +1,5 @@
 <?php
-require("../classescontrollers/Admin_Controller.php");
+require(dirname(__FILE__))."/../classescontrollers/Admin_Controller.php";
 session_start();
 //store all errors
 $errors = array();
@@ -19,7 +19,6 @@ if (isset($_POST['userlog'])){
 		$upassword = md5($upassword);
 		//compare user input to db
 		if ($getinfo['Password']==$upassword){
-			session_start();
 			$_SESSION['AdminID']=$getinfo['AdminID'];
 			$_SESSION['Role']=$getinfo['Role'];
 

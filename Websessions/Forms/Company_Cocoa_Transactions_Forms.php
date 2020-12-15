@@ -1,6 +1,11 @@
 <?php
-require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/CCT_controller.php";
 
+if(isset($_GET['update'])){
+  $id = $_GET['update'];
+  $x =  view_CCTfunction($_GET['update']);
+  $date = $x[0]['Transaction_Date_and_Time'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,7 +48,7 @@ require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
           <form action="../actions/Entity_Transacts.php" novalidate="true" method="post">
             <div class="form-group">
               <label for="Transaction">Transaction Date and Time:</label>
-              <input type="datetime-local" class="form-control" id="Company_Transaction" placeholder="Transaction Date and Time" name="CDOB">
+              <input type="datetime-local" class="form-control" id="Company_Transaction" placeholder="Transaction Date and Time" name="CDOB" value="<?php echo (isset($date))? $date : '';?>">
             </div>
             <div class="form-group">
               <label for="Money Withdrawn">Category of Cocoa:</label>
@@ -61,8 +66,8 @@ require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
               <option value="Kaase Port">Kaase Port</option>
             </select>   
             </div>
-           
-            <button type="submit" name="usertui" class="btn btn-primary">Add Cocoa Transaction</button>
+            <input type="hidden" name="id" value="<?php echo (isset($id))? $id : '';?>">
+            <button type="submit" name="<?php echo (isset($id))? 'update' : 'usertui';?>" class="btn btn-primary">Add Cocoa Transaction</button>
           </form>
         </div>
       </div>

@@ -1,6 +1,6 @@
 <?php
 //connect to contact class
-require(dirname(__FILE__))."Admin_class.php";
+require("Admin_Class.php");
 
 //insert admin function. 
 function insert_adminfunc($a, $b, $c, $d){
@@ -87,7 +87,7 @@ function deleteadmin_func($a){
 }
 
 //check to see if email already exists
-function checkforcus_func($email){
+function checkemail($email){
     //create an instance 
     $admin_object = new admin_class();
     

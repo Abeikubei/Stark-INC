@@ -1,6 +1,6 @@
 <?php
 //connect to controller 
-require(dirname(__FILE__))."../classescontrollers/DistrictO_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/DistrictO_controller.php";
 
 $nameerror = array();
 
@@ -27,7 +27,7 @@ if (isset($_POST['usertui'])){
         
         echo 'Successful';
 
-        header('location:');
+         header('Location: ../ViewTables/ViewDOs.php');
             }else{
 
                 echo "Failed"; 

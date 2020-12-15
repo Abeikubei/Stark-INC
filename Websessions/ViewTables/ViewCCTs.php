@@ -1,5 +1,5 @@
 <?php
-require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/CCT_controller.php";
 
 ?>
 <!DOCTYPE html>
@@ -24,6 +24,7 @@ require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
                   <input class="form-control mr-sm-2" type="text" placeholder="Search" name="Search" id="Search">
                   <button class="btn btn-success" type="submit">Search</button>
                 </form>
+                <a style="color:white" href="../Forms/Dashboard.php">Return to The Dashboard</a>
               </nav>
           <!-- Tables to display the elements of the Admins database -->
           <div class="container">
@@ -51,7 +52,7 @@ require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
                             <td>".$Cocoa['Transaction_Date_and_Time']."</td>
                             <td>".$Cocoa['Category_Of_Cocoa']."</td>
                             <td>".$Cocoa['Port']."</td>
-                            <td><a href='#' class='btn btn-success'>Update</a></td>
+                             <td><a href='../Forms/Company_Cocoa_Transactions_Forms.php?update=".$Cocoa['TransactionID']."' class='btn btn-success'>Update</a></td>
                             <td><a href='../actions/Entity_Transacts.php?TransactionID=".$Cocoa['TransactionID']."' class='btn btn-danger'>Delete</a></td>
                           </tr>";
                           }
@@ -64,8 +65,8 @@ require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
                             <td>".$Cocoa['Transaction_Date_and_Time']."</td>
                             <td>".$Cocoa['Category_Of_Cocoa']."</td>
                             <td>".$Cocoa['Port']."</td>
-                            <td><a href='#' class='btn btn-success'>Update</a></td>
-                            <td><a href='../actions/Entity_Transacts.php_?TransactionID=".$Cocoa['TransactionID']."' class='btn btn-danger'>Delete</a></td>
+                            <td><a href='../Forms/Company_Cocoa_Transactions_Forms.php?update=".$Cocoa['TransactionID']."' class='btn btn-success'>Update</a></td>
+                            <td><a href='../actions/Entity_Transacts.php?TransactionID=".$Cocoa['TransactionID']."' class='btn btn-danger'>Delete</a></td>
                           </tr>";
                           }
 

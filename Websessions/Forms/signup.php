@@ -22,29 +22,34 @@
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
             <!-- Form start -->
-                <form class="form-container" action="actions/RegisterAction.php" novalidate="true" method="post">
+                <form class="form-container" id = "regform" action="../Register/registerprocess.php" onsubmit="return formValidation()" method="post" novalidate="true">
                     <div class="form-group">
-                        <label for="fname">First Name:</label>
-                        <input type="fname" class="form-control" id="fname" placeholder="Enter First Name" name="fname">
-                    </div>
-                    <div class="form-group">
-                        <label for="lname">Last Name:</label>
-                        <input type="lname" class="form-control" id="lname" placeholder="Enter Last Name" name="lname">
+                        <label for="fname">Admin Name:</label>
+                        <input type="fname" class="form-control" id="c_name" placeholder="Enter First Name" name="c_name">
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email">
+                        <input type="email" class="form-control" id="c_email" placeholder="Enter Email" name="c_email">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" name="password">
                     </div>
-                    <div>
-                        <p>Already have an account?<a href="Login.php"> Login Here</a></p>
-                    </div>
-                    <button type="submit" class="btn btn-success btn-block">Submit</button>
 
-                </form>
+                    <div class="form-group">
+                        <label for ="cpwd">Confirm Password:</label>
+                        <input id="confirm" name="confirm_pass" class="form-control" type="password" placeholder="Re-enter the above password">
+                        <div id="password-error"></div>
+                   </div>
+
+                   <div class="form-group">
+                    <label for ="Contact">Contact Number:</label>
+                    <input id="c_contact" name="c_contact" class="form-control" type="text" placeholder="e.g. 0248952482" required>
+                   </div>
+
+                    <button type="submit" name="userreg" class="btn btn-success btn-block">Create Account</button>
+                    <p class="message">Already Registered? | <a href="Login.php">Login</a></p>
+            </form>
     <!-- Form End -->
 
          </div>
@@ -52,6 +57,63 @@
     </div>
     
 </div>
+<script>
+    function formValidation(){
+        // alphabets
+        var regex = /^[a-zA-Z]+$/;
+
+        if(regex.test(document.getElementById('c_name').value) == false){
+            alert("Name must be in alphabets only");
+            document.getElementById('c_name').focus();
+            return false;
+        }
+        if(document.getElementById('c_name').value == ""){
+            alert("Name Field cannot be left empty");
+            document.getElementById('c_name').focus();
+          return false;
+        }
+
+        // phone number
+        var regex = /^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g;
+        if(regex.test(document.getElementById('c_contact').value) == false){
+            alert("This is not a valid phone number");
+            document.getElementById('c_contact').focus()
+            return false;
+        }
+        if(document.getElementById('c_contact').value == ""){
+            alert("Contact Field cannot be left empty");
+            document.getElementById('c_contact').focus();
+          return false;
+        }
+
+        // email
+        var regex = /^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;
+        if(regex.test(document.getElementById('c_email').value) == false){
+            alert("This is not a valid Email");
+            document.getElementById('c_contact').focus()
+            return false;
+        }
+        if(document.getElementById('c_email').value == ""){
+            alert("Email Field cannot be left empty");
+            document.getElementById('c_contact').focus();
+          return false;
+        }
+
+        // check if passwords match
+        if(document.getElementById('password').value != document.getElementById('confirm').value){
+            alert('The passwords must match')
+            return false
+        }
+
+        if(document.getElementById('password').value == "" || document.getElementById('confirm').value==""){
+            alert('The password field cannot be empty')
+            return false
+        }
+
+        return true
+    }
+
+</script>
 
 </body>
 

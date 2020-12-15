@@ -1,6 +1,6 @@
 <?php
 //connecting to DB
-require(dirname(__FILE__))."../Settings/db_class.php";
+require(dirname(__FILE__))."/../Settings/db_class.php";
 
 /**
 *cct class for everything company cocoa Transactions related
@@ -12,7 +12,7 @@ class CCT_class extends db_connection
 	*/
 	public function addCCT($a, $b, $c){
 		//sql query
-		$sql = "INSERT INTO Company_Cocoa_Transactions(`Transaction_Date_and_Time`,`Category_Of_Cocoa`,`Port`) VALUES('$a', '$b', '$c')";
+		$sql = "INSERT INTO company_cocoa_transactions(`Transaction_Date_and_Time`,`Category_Of_Cocoa`,`Port`) VALUES('$a', '$b', '$c')";
 		//return executed query
 		return $this->db_query($sql);
 	}
@@ -24,7 +24,7 @@ class CCT_class extends db_connection
 
 	public function searchCCT($name){
 		//sql query
-		$sql = "SELECT * FROM Company_Cocoa_Transactions where Category_Of_Cocoa like '%$name%' or Port like '%$name%' ";
+		$sql = "SELECT * FROM company_cocoa_transactions where Category_Of_Cocoa like '%$name%' or Port like '%$name%' ";
 		//return executed query
 		return $this->db_query($sql);
 	}
@@ -35,7 +35,7 @@ class CCT_class extends db_connection
 	*/
 	public function viewCCT(){
 		//sql query
-		$sql = "SELECT * FROM Company_Cocoa_Transactions";
+		$sql = "SELECT * FROM company_cocoa_transactions";
 		//return executed query
 		return $this->db_query($sql);
 	}
@@ -45,17 +45,18 @@ class CCT_class extends db_connection
 	*/
 	public function view_CCT($pa){
 		//sql query
-		$sql = "SELECT * FROM Company_Cocoa_Transactions WHERE TransactionID=$pa";
+		$sql = "SELECT * FROM company_cocoa_transactions WHERE TransactionID='$pa'";
 		//return executed query
 		return $this->db_query($sql);
 	}
+
 
 	/**
 	*update manager info 
 	*/
 	public function updateCCT($a, $b, $c, $d){
 		//sql query 
-		$sql = "UPDATE Company_Cocoa_Transactions SET Transaction_Date_and_Time=$b,Category_Of_Cocoa=$c,Port=$d WHERE TransactionID=$a";
+		$sql = "UPDATE company_cocoa_transactions SET Transaction_Date_and_Time='$b', Category_Of_Cocoa='$c' , Port='$d' WHERE TransactionID='$a'";
 		//return executed query
 		return $this->db_query($sql);
 	}
@@ -65,7 +66,7 @@ class CCT_class extends db_connection
 	*/
 	public function deleteCCT($a){
 		// sql query
-		$sql = "DELETE FROM Company_Cocoa_Transactions WHERE TransactionID=$a";
+		$sql = "DELETE FROM company_cocoa_transactions WHERE TransactionID=$a";
 		//return executed query
 		return $this->db_query($sql);
 	}

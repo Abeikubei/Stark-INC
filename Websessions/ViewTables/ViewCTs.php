@@ -1,5 +1,5 @@
 <?php
-require(dirname(__FILE__))."../classescontrollers/CT_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/CT_controller.php";
 
 ?>
 <!DOCTYPE html>

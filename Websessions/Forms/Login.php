@@ -22,7 +22,7 @@
         <div class="col-md-4 col-sm-4 col-xs-12"></div>
         <div class="col-md-4 col-sm-4 col-xs-12">
             <!-- Form start -->
-             <form class="register_form" id="regform" action="../Register/loginprocess.php" method="POST" onsubmit="formvalidation()" novalidate="true">
+             <form class="register_form" id="regform" action="../Register/loginprocess.php" method="POST" onsubmit=" return formvalidation()" novalidate="true">
                 <h3>Login Page</h3>
                     <div class="form-group">
                         <label for="email">Email:</label>
@@ -32,7 +32,11 @@
                         <label for="pwd">Password:</label>
                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="Password">
                     </div>
+                    <div>
+                        <p>Dont have an account?<a href="signup.php"> Sign Up Here</a></p>
+                    </div>
                     <button type="submit" name="userlog" class="btn btn-success btn-block">Submit</button>
+
                 </form>
                     </div>
         <div class="col-md-4 col-sm-4 col-xs-12"></div>

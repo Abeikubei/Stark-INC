@@ -1,6 +1,6 @@
 <?php
 //connect to the CT  class
-require(dirname(__FILE__))."CT_class.php";
+require("CT_class.php");
 
 //insert manager function. 
 function insert_CTfunc($a, $b, $c,$d,$e){

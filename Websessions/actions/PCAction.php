@@ -1,6 +1,6 @@
 <?php
 //connect to controller 
-require(dirname(__FILE__))."../classescontrollers/PC_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/PC_controller.php";
 
 $nameerror = array();
 

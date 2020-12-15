@@ -1,6 +1,6 @@
 <?php
 //connect to controller 
-require(dirname(__FILE__))."../classescontrollers/CCT_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/CCT_controller.php";
 
 $nameerror = array();
 
@@ -15,14 +15,14 @@ if (isset($_POST['usertui'])){
 
         $insert_CCT = insert_CCTfunc($Transaction,$Category,$Port);
     
-    if ($insert_CCT) {
+    if ($insert_CCT === true) {
         
         echo 'Successful';
 
         header('location: ../ViewTables/ViewCCTs.php');
             }else{
 
-                echo "Failed"; 
+                echo $insert_CCT; 
     }
     
 
@@ -43,4 +43,26 @@ if (isset($_GET['OperationID'])){
     } 
 
 }  
+
+
+
+if (isset($_POST['update'])){
+    $ID = $_POST['id'];
+    $Transaction= $_POST['CDOB'];
+    $Category = $_POST['cocoaca'];
+    $Port = $_POST['Port'];
+
+        $up = update_CCTfunc($ID, $Transaction, $Category, $Port);
+
+    
+    if ($up) {
+        
+        header('Location: ../ViewTables/ViewCCTs.php');
+
+            }else{
+
+                echo "Failed"; 
+    } 
+
+}
 ?>        

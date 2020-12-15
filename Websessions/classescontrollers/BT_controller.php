@@ -1,6 +1,6 @@
 <?php
 //connect to BT class
-require(dirname(__FILE__))."BT_class.php";
+require("BT_class.php");
 
 //insert bank_transaction function. 
 function insert_bankfunc($a, $b, $c, $d,$e){

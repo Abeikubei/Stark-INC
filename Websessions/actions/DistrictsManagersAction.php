@@ -1,6 +1,6 @@
 <?php
 //connect to controller 
-require(dirname(__FILE__))."../classescontrollers/DM_controller.php";
+require(dirname(__FILE__))."/../classescontrollers/DM_controller.php";
 
 $nameerror = array();
 
@@ -20,7 +20,7 @@ if (isset($_POST['usertui'])){
         
         echo 'Successful';
 
-        header('location:');
+         header('Location: ../ViewTables/ViewDMs.php');
             }else{
 
                 echo "Failed"; 

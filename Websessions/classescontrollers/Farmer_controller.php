@@ -1,6 +1,6 @@
 <?php
 //connect to farmer class
-require(dirname(__FILE__))."Farmer_class.php";
+require("Farmer_class.php");
 
 //insert farmer function. 
 function insert_farmerfunc($a, $b, $c, $d,$e,$f,$g){

@@ -1,6 +1,6 @@
 <?php
 //connect to DM class
-require(dirname(__FILE__))."DM_class.php";
+require("DM_class.php");
 
 //insert manager function. 
 function insert_managerfunc($a, $b, $c,$d){
